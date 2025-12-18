@@ -1,6 +1,4 @@
 import 'package:delivery_app_with_backend/auth/login_or_register_page.dart';
-import 'package:delivery_app_with_backend/pages/login_page.dart';
-import 'package:delivery_app_with_backend/pages/register_page.dart';
 import 'package:delivery_app_with_backend/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
