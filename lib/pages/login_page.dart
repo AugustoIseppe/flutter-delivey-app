@@ -14,34 +14,59 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController =
+      TextEditingController();
+  final TextEditingController passwordController =
+      TextEditingController();
 
   void loginMethod() {
     // Implement login functionality here
 
     //navigate to home page after login
-    Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const HomePage(),
+      ),
+      (route) => false,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      backgroundColor:
+          Theme.of(context).colorScheme.surface,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(CupertinoIcons.lock_open, size: 100, color: Theme.of(context).colorScheme.primary),
+            Icon(
+              CupertinoIcons.lock_open,
+              size: 100,
+              color: Theme.of(context).colorScheme.primary,
+            ),
             const SizedBox(height: 25),
             Text(
               'F O O D - D E L I V E R Y - A P P',
-              style: GoogleFonts.abel(fontSize: 16, color: Theme.of(context).colorScheme.onSurface),
+              style: GoogleFonts.abel(
+                fontSize: 16,
+                color:
+                    Theme.of(context).colorScheme.onSurface,
+              ),
             ),
             const SizedBox(height: 25),
-            MyTextField(controller: emailController, hintText: "EMAIL", obscureText: false),
+            MyTextField(
+              controller: emailController,
+              hintText: "EMAIL",
+              obscureText: false,
+            ),
             const SizedBox(height: 10),
-            MyTextField(controller: passwordController, hintText: "PASSWORD", obscureText: true),
+            MyTextField(
+              controller: passwordController,
+              hintText: "PASSWORD",
+              obscureText: true,
+            ),
             const SizedBox(height: 20),
             MyButton(onTap: loginMethod, text: "LOGIN"),
             const SizedBox(height: 20),
@@ -50,7 +75,14 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 Text(
                   'AINDA NÃO TEM UMA CONTA?',
-                  style: GoogleFonts.abel(color: Theme.of(context).colorScheme.primary, letterSpacing: 2, fontSize: 13),
+                  style: GoogleFonts.abel(
+                    color:
+                        Theme.of(
+                          context,
+                        ).colorScheme.primary,
+                    letterSpacing: 2,
+                    fontSize: 13,
+                  ),
                 ),
                 const SizedBox(width: 4),
                 //upper case for register
@@ -59,7 +91,10 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     'REGISTRE-SE',
                     style: GoogleFonts.abel(
-                      color: Theme.of(context).colorScheme.primary,
+                      color:
+                          Theme.of(
+                            context,
+                          ).colorScheme.primary,
                       letterSpacing: 2,
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
