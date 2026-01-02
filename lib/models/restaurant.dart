@@ -1,4 +1,6 @@
+import 'package:collection/collection.dart';
 import 'package:delivery_app_with_backend/models/addon.dart';
+import 'package:delivery_app_with_backend/models/cart_item.dart';
 import 'package:delivery_app_with_backend/models/food.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +12,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A delicious cheeseburger with lettuce, tomato, and pickles.',
       imagePath: 'lib/images/lanches/lanche1.jpeg',
-      price: '5.99',
+      price: 5.99,
       category: FoodCategory.burguer,
       availableAddons: [
         Addon(name: 'Extra Cheese', price: 0.99),
@@ -23,7 +25,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A double patty burger with crispy bacon and cheddar cheese.',
       imagePath: 'lib/images/lanches/lanche2.jpeg',
-      price: '7.99',
+      price: 7.99,
       category: FoodCategory.burguer,
       availableAddons: [
         Addon(name: 'Extra Bacon', price: 1.99),
@@ -35,7 +37,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A crispy chicken burger with spicy mayo and jalapeños.',
       imagePath: 'lib/images/lanches/lanche3.jpeg',
-      price: '6.49',
+      price: 6.49,
       category: FoodCategory.burguer,
       availableAddons: [
         Addon(name: 'Extra Jalapeños', price: 0.49),
@@ -47,7 +49,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A beef burger topped with sautéed mushrooms and Swiss cheese.',
       imagePath: 'lib/images/lanches/lanche4.jpeg',
-      price: '6.99',
+      price: 6.99,
       category: FoodCategory.burguer,
       availableAddons: [
         Addon(name: 'Extra Mushrooms', price: 0.99),
@@ -59,7 +61,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A smoky BBQ burger with onion rings and BBQ sauce.',
       imagePath: 'lib/images/lanches/lanche5.jpeg',
-      price: '6.99',
+      price: 6.99,
       category: FoodCategory.burguer,
       availableAddons: [
         Addon(name: 'Extra BBQ Sauce', price: 0.49),
@@ -71,7 +73,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A plant-based burger with lettuce, tomato, and vegan mayo.',
       imagePath: 'lib/images/lanches/lanche6.jpeg',
-      price: '5.99',
+      price: 5.99,
       category: FoodCategory.burguer,
       availableAddons: [
         Addon(name: 'Avocado', price: 1.29),
@@ -83,7 +85,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A tropical burger with grilled pineapple and teriyaki sauce.',
       imagePath: 'lib/images/lanches/lanche7.jpeg',
-      price: '6.49',
+      price: 6.49,
       category: FoodCategory.burguer,
       availableAddons: [
         Addon(name: 'Extra Pineapple', price: 0.99),
@@ -95,7 +97,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A simple and classic burger with ketchup and mustard.',
       imagePath: 'lib/images/lanches/lanche8.jpeg',
-      price: '4.99',
+      price: 4.99,
       category: FoodCategory.burguer,
       availableAddons: [
         Addon(name: 'Extra Patty', price: 2.49),
@@ -107,7 +109,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A burger with crispy bacon and melted cheddar cheese.',
       imagePath: 'lib/images/lanches/lanche9.jpeg',
-      price: '6.99',
+      price: 6.99,
       category: FoodCategory.burguer,
       availableAddons: [
         Addon(name: 'Extra Cheddar', price: 0.99),
@@ -119,7 +121,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A gourmet burger with truffle aioli and arugula.',
       imagePath: 'lib/images/lanches/lanche10.jpeg',
-      price: '8.99',
+      price: 8.99,
       category: FoodCategory.burguer,
       availableAddons: [
         Addon(name: 'Extra Truffle Aioli', price: 1.49),
@@ -133,7 +135,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A refreshing salad with cucumbers, tomatoes, olives, and feta cheese.',
       imagePath: 'lib/images/saladas/salada1.jpg',
-      price: '5.99',
+      price: 5.99,
       category: FoodCategory.salad,
       availableAddons: [
         Addon(name: 'Extra Feta', price: 0.99),
@@ -145,7 +147,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'Crisp romaine lettuce with Caesar dressing and croutons.',
       imagePath: 'lib/images/saladas/salada2.jpg',
-      price: '6.49',
+      price: 6.49,
       category: FoodCategory.salad,
       availableAddons: [
         Addon(name: 'Grilled Chicken', price: 2.49),
@@ -156,7 +158,7 @@ class Restaurant extends ChangeNotifier {
       name: 'Fruit Salad',
       description: 'A mix of fresh seasonal fruits.',
       imagePath: 'lib/images/saladas/salada3.jpg',
-      price: '4.49',
+      price: 4.49,
       category: FoodCategory.salad,
       availableAddons: [
         Addon(name: 'Honey Drizzle', price: 0.49),
@@ -169,7 +171,7 @@ class Restaurant extends ChangeNotifier {
       name: 'Chocolate Brownie',
       description: 'A rich and fudgy chocolate brownie.',
       imagePath: 'lib/images/sobremesa/sobremesa1.jpeg',
-      price: '3.49',
+      price: 3.49,
       category: FoodCategory.desserts,
       availableAddons: [
         Addon(name: 'Vanilla Ice Cream', price: 1.49),
@@ -181,7 +183,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A classic apple pie with a flaky crust.',
       imagePath: 'lib/images/sobremesa/sobremesa2.jpg',
-      price: '4.49',
+      price: 4.49,
       category: FoodCategory.desserts,
       availableAddons: [
         Addon(name: 'Whipped Cream', price: 0.49),
@@ -193,7 +195,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'An Italian dessert with layers of coffee-soaked ladyfingers and mascarpone.',
       imagePath: 'lib/images/sobremesa/sobremesa3.jpg',
-      price: '5.99',
+      price: 5.99,
       category: FoodCategory.desserts,
       availableAddons: [
         Addon(name: 'Extra Cocoa Powder', price: 0.29),
@@ -205,7 +207,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A tangy lemon tart with a buttery crust.',
       imagePath: 'lib/images/sobremesa/sobremesa4.jpg',
-      price: '4.99',
+      price: 4.99,
       category: FoodCategory.desserts,
       availableAddons: [
         Addon(name: 'Raspberry Sauce', price: 0.49),
@@ -217,7 +219,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A creamy Italian dessert served with berry compote.',
       imagePath: 'lib/images/sobremesa/sobremesa5.jpg',
-      price: '5.49',
+      price: 5.49,
       category: FoodCategory.desserts,
       availableAddons: [
         Addon(name: 'Extra Berry Compote', price: 0.99),
@@ -229,7 +231,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A creamy cheesecake with a graham cracker crust.',
       imagePath: 'lib/images/sobremesa/sobremesa6.jpg',
-      price: '5.99',
+      price: 5.99,
       category: FoodCategory.desserts,
       availableAddons: [
         Addon(name: 'Strawberry Sauce', price: 0.49),
@@ -241,7 +243,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A sweet pie with bananas, cream, and toffee.',
       imagePath: 'lib/images/sobremesa/sobremesa7.jpeg',
-      price: '4.99',
+      price: 4.99,
       category: FoodCategory.desserts,
       availableAddons: [
         Addon(name: 'Extra Toffee', price: 0.99),
@@ -254,7 +256,7 @@ class Restaurant extends ChangeNotifier {
       name: 'Coca-Cola',
       description: 'A refreshing classic Coca-Cola.',
       imagePath: 'lib/images/sucos/suco1.jpeg',
-      price: '1.99',
+      price: 1.99,
       category: FoodCategory.drink,
       availableAddons: [
         Addon(name: 'Ice Cubes', price: 0.19),
@@ -265,7 +267,7 @@ class Restaurant extends ChangeNotifier {
       name: 'Orange Juice',
       description: 'Freshly squeezed orange juice.',
       imagePath: 'lib/images/sucos/suco2.jpg',
-      price: '2.99',
+      price: 2.99,
       category: FoodCategory.drink,
       availableAddons: [
         Addon(name: 'Mint Leaves', price: 0.29),
@@ -276,7 +278,7 @@ class Restaurant extends ChangeNotifier {
       name: 'Lemonade',
       description: 'A sweet and tangy lemonade.',
       imagePath: 'lib/images/sucos/suco3.jpg',
-      price: '2.49',
+      price: 2.49,
       category: FoodCategory.drink,
       availableAddons: [
         Addon(name: 'Chia Seeds', price: 0.49),
@@ -287,7 +289,7 @@ class Restaurant extends ChangeNotifier {
       name: 'Iced Tea',
       description: 'A chilled tea with a hint of lemon.',
       imagePath: 'lib/images/sucos/suco4.jpg',
-      price: '2.49',
+      price: 2.49,
       category: FoodCategory.drink,
       availableAddons: [
         Addon(name: 'Peach Flavor', price: 0.49),
@@ -299,7 +301,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A creamy smoothie made with fresh strawberries.',
       imagePath: 'lib/images/sucos/suco5.jpg',
-      price: '3.49',
+      price: 3.49,
       category: FoodCategory.drink,
       availableAddons: [
         Addon(name: 'Protein Powder', price: 1.49),
@@ -310,7 +312,7 @@ class Restaurant extends ChangeNotifier {
       name: 'Mango Lassi',
       description: 'A sweet and creamy mango yogurt drink.',
       imagePath: 'lib/images/sucos/suco6.jpg',
-      price: '3.99',
+      price: 3.99,
       category: FoodCategory.drink,
       availableAddons: [
         Addon(name: 'Cardamom', price: 0.29),
@@ -321,7 +323,7 @@ class Restaurant extends ChangeNotifier {
       name: 'Espresso',
       description: 'A strong and bold espresso shot.',
       imagePath: 'lib/images/sucos/suco7.jpg',
-      price: '1.99',
+      price: 1.99,
       category: FoodCategory.drink,
       availableAddons: [
         Addon(name: 'Extra Shot', price: 0.99),
@@ -333,7 +335,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'A creamy cappuccino with steamed milk foam.',
       imagePath: 'lib/images/sucos/suco8.jpg',
-      price: '2.99',
+      price: 2.99,
       category: FoodCategory.drink,
       availableAddons: [
         Addon(name: 'Cinnamon', price: 0.19),
@@ -344,7 +346,7 @@ class Restaurant extends ChangeNotifier {
       name: 'Hot Chocolate',
       description: 'A warm and rich hot chocolate.',
       imagePath: 'lib/images/sucos/suco9.jpg',
-      price: '2.99',
+      price: 2.99,
       category: FoodCategory.drink,
       availableAddons: [
         Addon(name: 'Marshmallows', price: 0.49),
@@ -355,7 +357,7 @@ class Restaurant extends ChangeNotifier {
       name: 'Green Tea',
       description: 'A soothing cup of green tea.',
       imagePath: 'lib/images/sucos/suco10.jpg',
-      price: '1.99',
+      price: 1.99,
       category: FoodCategory.drink,
       availableAddons: [
         Addon(name: 'Honey', price: 0.39),
@@ -368,7 +370,7 @@ class Restaurant extends ChangeNotifier {
       name: 'French Fries',
       description: 'Crispy golden french fries.',
       imagePath: 'lib/images/perfil/perfil1.jpeg',
-      price: '2.49',
+      price: 2.49,
       category: FoodCategory.sides,
       availableAddons: [
         Addon(name: 'Cheese Sauce', price: 0.99),
@@ -379,7 +381,7 @@ class Restaurant extends ChangeNotifier {
       name: 'Onion Rings',
       description: 'Crispy battered onion rings.',
       imagePath: 'lib/images/perfil/perfil2.jpeg',
-      price: '2.99',
+      price: 2.99,
       category: FoodCategory.sides,
       availableAddons: [
         Addon(name: 'Ranch Dressing', price: 0.49),
@@ -391,7 +393,7 @@ class Restaurant extends ChangeNotifier {
       description:
           'Fried mozzarella sticks with marinara sauce.',
       imagePath: 'lib/images/perfil/perfil3.jpeg',
-      price: '3.99',
+      price: 3.99,
       category: FoodCategory.sides,
       availableAddons: [
         Addon(name: 'Extra Marinara', price: 0.49),
@@ -402,7 +404,7 @@ class Restaurant extends ChangeNotifier {
       name: 'Garlic Bread',
       description: 'Toasted bread with garlic butter.',
       imagePath: 'lib/images/perfil/perfil4.jpeg',
-      price: '2.99',
+      price: 2.99,
       category: FoodCategory.sides,
       availableAddons: [
         Addon(name: 'Cheese Topping', price: 0.99),
@@ -413,7 +415,7 @@ class Restaurant extends ChangeNotifier {
       name: 'Coleslaw',
       description: 'Creamy and tangy coleslaw.',
       imagePath: 'lib/images/perfil/perfil5.jpeg',
-      price: '1.99',
+      price: 1.99,
       category: FoodCategory.sides,
       availableAddons: [
         Addon(name: 'Extra Dressing', price: 0.49),
@@ -432,15 +434,75 @@ class Restaurant extends ChangeNotifier {
    !O P E R A T I O N S
   */
 
+  // user cart
+  final List<CartItem> _cart = [];
+
   //add to cart
+  void addToCart(Food food, List<Addon> selectedAddons) {
+    CartItem? cartItem = _cart.firstWhereOrNull((item) {
+      bool isSameFood = item.food.name == food;
+      bool isSameAddons = const ListEquality().equals(
+        item.selectedAddons,
+        selectedAddons,
+      );
+
+      return isSameAddons && isSameFood;
+    });
+    if (cartItem != null) {
+      cartItem.quantity++;
+    } else {
+      _cart.add(
+        CartItem(
+          food: food,
+          selectedAddons: selectedAddons,
+        ),
+      );
+    }
+    notifyListeners();
+  }
 
   // remove from cart
 
+  void removeFromCart(CartItem cartItem) {
+    int cartIndex = _cart.indexOf(cartItem);
+    if (cartIndex != -1) {
+      _cart[cartIndex].quantity--;
+    } else {
+      _cart.removeAt(cartIndex);
+    }
+    notifyListeners();
+  }
+
   //get total price of cart
 
+  double get totalCartPrice {
+    double total = 0.0;
+    for (CartItem cartItem in _cart) {
+      double itemTotal = cartItem.food.price;
+
+      for (Addon addon in cartItem.selectedAddons) {
+        itemTotal += addon.price;
+      }
+
+      total += itemTotal * cartItem.quantity;
+    }
+    return total;
+  }
+
   //get total number of items in cart
+  int get totalItemCount {
+    int totalItemCount = 0;
+    for (CartItem cartItem in _cart) {
+      totalItemCount += cartItem.quantity;
+    }
+    return totalItemCount;
+  }
 
   // clear cart
+  void clearCart() {
+    _cart.clear();
+    notifyListeners();
+  }
 
   /* 
   * H E L P E R S
