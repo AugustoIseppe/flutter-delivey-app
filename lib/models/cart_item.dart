@@ -1,0 +1,23 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+
+import 'package:delivery_app_with_backend/models/addon.dart';
+import 'package:delivery_app_with_backend/models/food.dart';
+
+class CartItem {
+  Food food;
+  List<Addon> selectedAddons;
+  int quantity;
+  CartItem({
+    required this.food,
+    required this.selectedAddons,
+    this.quantity = 1,
+  });
+
+  double get totalPrice {
+    double addonsPrice = selectedAddons.fold(
+      0.0,
+      (sum, addon) => sum + addon.price,
+    );
+    return (food.price + addonsPrice) * quantity;
+  }
+}
