@@ -6,6 +6,7 @@ import 'package:delivery_app_with_backend/components/my_sliver_app_bar.dart';
 import 'package:delivery_app_with_backend/components/my_tab_bar.dart';
 import 'package:delivery_app_with_backend/models/food.dart';
 import 'package:delivery_app_with_backend/models/restaurant.dart';
+import 'package:delivery_app_with_backend/pages/food_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -56,7 +57,18 @@ class _HomePageState extends State<HomePage>
         padding: EdgeInsets.zero,
         itemBuilder: (context, index) {
           Food food = categoryMenu[index];
-          return MyFoodTile(food: food);
+          return MyFoodTile(
+            food: food,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder:
+                      (context) => FoodPage(food: food),
+                ),
+              );
+            },
+          );
         },
       );
     }).toList();
