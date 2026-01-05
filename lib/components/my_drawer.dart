@@ -1,10 +1,21 @@
 import 'package:delivery_app_with_backend/components/my_drawer_tile.dart';
 import 'package:delivery_app_with_backend/pages/settings_page.dart';
+import 'package:delivery_app_with_backend/service/auth/auth_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MyDrawer extends StatelessWidget {
+class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
+
+  @override
+  State<MyDrawer> createState() => _MyDrawerState();
+}
+
+class _MyDrawerState extends State<MyDrawer> {
+  void logout() {
+    final authService = AuthService();
+    authService.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +58,9 @@ class MyDrawer extends StatelessWidget {
           MyDrawerTile(
             text: 'LOGOUT',
             icon: CupertinoIcons.arrow_right_circle,
-            onTap: () {},
+            onTap: () {
+              logout();
+            },
           ),
         ],
       ),
