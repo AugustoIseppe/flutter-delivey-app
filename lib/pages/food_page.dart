@@ -63,7 +63,7 @@ class _FoodPageState extends State<FoodPage> {
                     color:
                         Theme.of(
                           context,
-                        ).colorScheme.shadow,
+                        ).colorScheme.primary,
                   ),
                 ),
                 Text(
@@ -75,7 +75,7 @@ class _FoodPageState extends State<FoodPage> {
                     color:
                         Theme.of(
                           context,
-                        ).colorScheme.shadow,
+                        ).colorScheme.primary,
                   ),
                 ),
                 Padding(
@@ -88,7 +88,7 @@ class _FoodPageState extends State<FoodPage> {
                       color:
                           Theme.of(
                             context,
-                          ).colorScheme.shadow,
+                          ).colorScheme.primary,
                     ),
                   ),
                 ),
@@ -98,9 +98,7 @@ class _FoodPageState extends State<FoodPage> {
                   endIndent: 12,
                   indent: 12,
                   color:
-                      Theme.of(
-                        context,
-                      ).colorScheme.secondary,
+                      Theme.of(context).colorScheme.primary,
                 ),
                 const SizedBox(height: 20),
 
@@ -119,7 +117,7 @@ class _FoodPageState extends State<FoodPage> {
                         color:
                             Theme.of(
                               context,
-                            ).colorScheme.shadow,
+                            ).colorScheme.primary,
                       ),
                     ),
                   ),
@@ -134,7 +132,7 @@ class _FoodPageState extends State<FoodPage> {
                         color:
                             Theme.of(
                               context,
-                            ).colorScheme.secondary,
+                            ).colorScheme.primary,
                       ),
                       borderRadius: BorderRadius.circular(
                         8,
@@ -163,7 +161,7 @@ class _FoodPageState extends State<FoodPage> {
                               color:
                                   Theme.of(
                                     context,
-                                  ).colorScheme.shadow,
+                                  ).colorScheme.primary,
                             ),
                           ),
                           subtitle: Text(
@@ -174,7 +172,7 @@ class _FoodPageState extends State<FoodPage> {
                               color:
                                   Theme.of(
                                     context,
-                                  ).colorScheme.shadow,
+                                  ).colorScheme.primary,
                             ),
                           ),
                           value:
