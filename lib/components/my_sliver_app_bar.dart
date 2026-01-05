@@ -1,3 +1,4 @@
+import 'package:delivery_app_with_backend/pages/cart_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -35,7 +36,14 @@ class MySliverAppBar extends StatelessWidget {
             CupertinoIcons.cart,
             color: Theme.of(context).colorScheme.onSurface,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CartPage(),
+              ),
+            );
+          },
         ),
       ],
       expandedHeight: 340,
