@@ -5,12 +5,16 @@ class MyButton extends StatelessWidget {
   final Function()? onTap;
   final String text;
 
-  const MyButton({super.key, required this.onTap, required this.text});
+  const MyButton({
+    super.key,
+    required this.onTap,
+    required this.text,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25),
+      padding: const EdgeInsets.symmetric(horizontal: 15),
       child: GestureDetector(
         onTap: onTap,
         child: Container(
@@ -23,7 +27,8 @@ class MyButton extends StatelessWidget {
             child: Text(
               text,
               style: GoogleFonts.abel(
-                color: Theme.of(context).colorScheme.onSecondary,
+                color:
+                    Theme.of(context).colorScheme.primary,
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
                 letterSpacing: 2,
