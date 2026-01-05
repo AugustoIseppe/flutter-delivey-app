@@ -1,6 +1,6 @@
 import 'package:delivery_app_with_backend/components/my_button.dart';
 import 'package:delivery_app_with_backend/components/my_text_field.dart';
-import 'package:delivery_app_with_backend/pages/home_page.dart';
+import 'package:delivery_app_with_backend/service/auth/auth_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,16 +20,41 @@ class _LoginPageState extends State<LoginPage> {
       TextEditingController();
 
   void loginMethod() {
-    // Implement login functionality here
-
-    //navigate to home page after login
-    Navigator.pushAndRemoveUntil(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const HomePage(),
-      ),
-      (route) => false,
-    );
+    try {
+      final authService = AuthService();
+      authService.signIn(
+        emailController.text,
+        passwordController.text,
+      );
+    } catch (e) {
+      // Show error dialog
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(
+              'Erro de Login',
+              style: GoogleFonts.abel(fontSize: 12),
+            ),
+            content: Text(
+              e.toString(),
+              style: GoogleFonts.abel(fontSize: 12),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text(
+                  'OK',
+                  style: GoogleFonts.abel(fontSize: 12),
+                ),
+              ),
+            ],
+          );
+        },
+      );
+    }
   }
 
   @override
