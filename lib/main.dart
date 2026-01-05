@@ -1,10 +1,16 @@
-import 'package:delivery_app_with_backend/auth/login_or_register_page.dart';
+import 'package:delivery_app_with_backend/service/auth/auth_gate.dart';
+import 'package:delivery_app_with_backend/firebase_options.dart';
 import 'package:delivery_app_with_backend/models/restaurant.dart';
 import 'package:delivery_app_with_backend/themes/theme_provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     MultiProvider(
       providers: [
@@ -30,7 +36,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: themeProvider.themeData,
-      home: const LoginOrRegisterPage(),
+      home: const AuthGate(),
     );
   }
 }
